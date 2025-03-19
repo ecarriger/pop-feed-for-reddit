@@ -1,7 +1,14 @@
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+
 import App from './App';
 
 test('First test', () => {
-    const total = 1 + 2;
+    render(<App />);
+    
+    const title = screen.getByRole('heading', {
+        name: /react/i
+    });
 
-    expect(total).toBe(3);
+    expect(title).toBeInTheDocument();
 });
