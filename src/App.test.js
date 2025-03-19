@@ -1,3 +1,5 @@
+import App from './App';
+
 test('First test', () => {
     const total = 1 + 2;
 
