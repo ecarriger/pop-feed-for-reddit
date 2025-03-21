@@ -1,11 +1,13 @@
 import { Outlet } from 'react-router'
+import Nav from './components/nav/Nav'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <h1>React App</h1>
+      <Nav />
+      <h2>React App</h2>
       <Outlet />
     </>
   )
