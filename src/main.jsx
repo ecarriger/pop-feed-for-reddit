@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import './index.css'
 import App from './App.jsx'
-import PostPage from './features/post/PostPage.jsx'
-import HomePage from './features/home/HomePage.jsx'
+import PostPage from './features/postPage/PostPage.jsx'
+import HomePage from './features/homePage/HomePage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
