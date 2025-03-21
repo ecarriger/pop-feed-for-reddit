@@ -19,7 +19,6 @@ const HomePage = () => {
         e.preventDefault();
         const mockRedditData = await loadMockRedditData();
         setPosts(mockRedditData);
-        console.log(mockRedditData);
     }
 
     return(

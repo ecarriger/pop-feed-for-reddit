@@ -3,15 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const postsSlice = createSlice({
     name: 'posts',
     initialState: {
-        allPosts: []
+        allPosts: {}
     },
     reducers: {
         addPost: (state, action) => {
-            state.allPosts.push(action.payload);
+            state.allPosts[action.payload.data.id] = action.payload.data;
         }
     }
 });
 
-export const selectPosts = (state) => state.posts.allPosts;
+export const selectPost = (postId) => (state) => state.posts.allPosts[postId];
+export const selectAllPosts = (state) => state.posts.allPosts;
 export const { addPost } = postsSlice.actions;
 export default postsSlice.reducer;
