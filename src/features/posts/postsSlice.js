@@ -12,5 +12,6 @@ const postsSlice = createSlice({
     }
 });
 
+export const selectPosts = (state) => state.posts.allPosts;
 export const { addPost } = postsSlice.actions;
 export default postsSlice.reducer;

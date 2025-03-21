@@ -5,7 +5,7 @@ import './index.css'
 import { Provider } from 'react-redux'
 import store from './store.js'
 import App from './App.jsx'
-import PostPage from './features/postPage/PostPage.jsx'
+import PostPage from './features/posts/postPage/PostPage.jsx'
 import HomePage from './features/posts/homePage/HomePage.jsx'
 
 createRoot(document.getElementById('root')).render(
