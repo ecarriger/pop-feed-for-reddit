@@ -1,5 +1,5 @@
-import CategoryPicker from "../../components/categoryPicker/CategoryPicker";
-import PostPreviewList from "../../components/postPreviewList/PostPreviewList";
+import CategoryPicker from "../../../components/categoryPicker/CategoryPicker";
+import PostPreviewList from "../../../components/postPreviewList/PostPreviewList";
 
 const HomePage = () => {
     return(
