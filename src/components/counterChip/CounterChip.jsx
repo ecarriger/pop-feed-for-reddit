@@ -1,8 +1,8 @@
 
 
-const CounterChip = () => {
+const CounterChip = ({count, icon}) => {
     return (
-        <h2>Chip</h2>
+        <h3>{count}</h3>
     );
 };
 
