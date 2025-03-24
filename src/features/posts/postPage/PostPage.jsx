@@ -1,5 +1,5 @@
-import Post from "../../components/post/Post";
-import CommentsSection from "../commentsSection/CommentsSection";
+import Post from "../../../components/post/Post"
+import CommentsSection from "../../comments/Comments";
 
 
 const PostPage = () => {
@@ -7,7 +7,7 @@ const PostPage = () => {
         <>
             <h2>PostPage</h2>
             <Post />
-            <CommentsSection />
+            <Comments />
         </>
     );
 }
