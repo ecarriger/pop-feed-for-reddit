@@ -1,8 +1,8 @@
-
+import { Chip } from "@mui/material";
 
 const CounterChip = ({count, icon}) => {
     return (
-        <h3>{count}</h3>
+        <Chip icon={icon} label={count} />
     );
 };
 
