@@ -9,7 +9,7 @@ const PostPreview = ({postId}) => {
     return (
         <li>
             <h3>{post.title}</h3>
-            <CounterChips />
+            <CounterChips likeCount={post.ups} commentCount={post.num_comments} />
         </li>
     );
 };

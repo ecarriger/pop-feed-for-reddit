@@ -1,13 +1,15 @@
-import CounterChip from "../counterChip/CounterChip";
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import CommentIcon from '@mui/icons-material/Comment';
+import CounterChip from '../counterChip/CounterChip';
+import styles from './CounterChip.module.css';
 
 
-const CounterChips = () => {
+const CounterChips = ({likeCount, commentCount}) => {
     return (
-        <>
-            <h2>CounterChips</h2>
-            <CounterChip />
-            <CounterChip />
-        </>
+        <div className={styles.chipContainer}>
+            <CounterChip count={likeCount} icon={<ThumbUpIcon fontSize="small" sx={{marginLeft: '.5rem'}} />} />
+            <CounterChip count={commentCount} icon={<CommentIcon  fontSize="small" sx={{marginLeft: '.5rem'}} />} />
+        </div>
     );
 };
 
