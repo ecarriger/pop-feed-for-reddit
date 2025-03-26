@@ -7,8 +7,8 @@ import styles from './CounterChip.module.css';
 const CounterChips = ({likeCount, commentCount}) => {
     return (
         <div className={styles.chipContainer}>
-            <CounterChip count={likeCount} icon={<ThumbUpIcon fontSize="small" />} />
-            <CounterChip count={commentCount} icon={<CommentIcon  fontSize="small"/>} />
+            <CounterChip count={likeCount} icon={<ThumbUpIcon fontSize="small" sx={{marginLeft: '.5rem'}} />} />
+            <CounterChip count={commentCount} icon={<CommentIcon  fontSize="small" sx={{marginLeft: '.5rem'}} />} />
         </div>
     );
 };
