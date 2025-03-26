@@ -1,8 +1,14 @@
 import { Chip } from "@mui/material";
+import { addSeperatorToNumber } from "../../utilities/utils";
 
 const CounterChip = ({count, icon}) => {
+    console.log(icon);
+    const propsValid = typeof count === "number" && typeof icon === "object";
+    
+    const formattedCount = addSeperatorToNumber(count);
+
     return (
-        <Chip icon={icon} label={count.toLocaleString()} />
+        propsValid ? <Chip icon={icon} label={formattedCount} color="primary" /> : <></>
     );
 };
 
