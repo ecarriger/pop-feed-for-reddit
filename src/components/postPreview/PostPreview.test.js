@@ -10,7 +10,16 @@ const renderPostPreview = (postId) => {
             allPosts: {
                 abc123: {
                     id: 'abc123',
-                    title: 'Test'
+                    title: 'Test abc123 heading',
+                    subreddit: 'testsub',
+                    preview: {
+                        images: ['mockurl']
+                    }
+                },
+                xyz789: {
+                    id: 'xyz789',
+                    title: 'Test xyz789 heading',
+                    subreddit: 'testsub'
                 }
             }
         }
@@ -18,12 +27,27 @@ const renderPostPreview = (postId) => {
     renderWithProviders(<PostPreview postId={postId} />, {preloadedState: preloadedState});
 };
 
-test('post title renders', () => {
+test('post elements render', () => {
     renderPostPreview('abc123');
 
     const postTitle = screen.getByRole('heading', {
-        name: /test/i
+        name: /abc123 heading/i
     });
+    const subReddit = screen.getByRole('heading', {
+        name: /testsub/i
+    });
+    const chips = document.querySelector('.creditContainer');
+    const previewImg = screen.getByAltText('Preview image');
 
     expect(postTitle).toBeInTheDocument();
+    expect(subReddit).toBeInTheDocument();
+    expect(chips).toBeInTheDocument();
+    expect(previewImg).toBeInTheDocument();
+});
+test('no image renders if post data does not contain preview key', () => {
+    renderPostPreview('xyz789');
+
+    const previewImg = screen.queryByAltText('Preview image');
+
+    expect(previewImg).not.toBeInTheDocument();
 });

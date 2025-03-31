@@ -8,6 +8,11 @@ const PostPreview = ({postId}) => {
     
     return (
         <li>
+            <div className="creditContainer" >
+                <h4>r/{post.subreddit}</h4>
+                <p>{post.created}</p>
+            </div>
+            {('preview' in post) && <img alt='Preview image' />}
             <h3>{post.title}</h3>
             <CounterChips likeCount={post.ups} commentCount={post.num_comments} />
         </li>
