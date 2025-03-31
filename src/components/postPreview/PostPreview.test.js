@@ -37,7 +37,7 @@ test('post elements render', () => {
         name: /testsub/i
     });
     const chips = document.querySelector('.creditContainer');
-    const previewImg = screen.getByAltText('Preview image');
+    const previewImg = screen.getByAltText(/testsub/i);
 
     expect(postTitle).toBeInTheDocument();
     expect(subReddit).toBeInTheDocument();
@@ -47,7 +47,7 @@ test('post elements render', () => {
 test('no image renders if post data does not contain preview key', () => {
     renderPostPreview('xyz789');
 
-    const previewImg = screen.queryByAltText('Preview image');
+    const previewImg = screen.queryByAltText(/testsub/i);
 
     expect(previewImg).not.toBeInTheDocument();
 });
