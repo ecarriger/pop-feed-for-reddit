@@ -33,7 +33,8 @@ export default [
   },
   {
     // update this to match your test files
-    files: ['**/*.spec.js', '**/*.test.js'],
+    files: ['**/*.spec.js', '**/*.test.js', '**/jest.setup.js'
+    ],
     plugins: { jest: pluginJest },
     languageOptions: {
       globals: pluginJest.environments.globals.globals,
