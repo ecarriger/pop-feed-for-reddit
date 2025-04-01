@@ -14,7 +14,8 @@ const renderPostPreview = (postId) => {
                     subreddit: 'testsub',
                     preview: {
                         images: ['mockurl']
-                    }
+                    },
+                    ups: 579
                 },
                 xyz789: {
                     id: 'xyz789',
@@ -33,10 +34,8 @@ test('post elements render', () => {
     const postTitle = screen.getByRole('heading', {
         name: /abc123 heading/i
     });
-    const subReddit = screen.getByRole('heading', {
-        name: /testsub/i
-    });
-    const chips = document.querySelector('.creditContainer');
+    const subReddit = screen.getByText(/testsub/i);
+    const chips = screen.getByText('579');
     const previewImg = screen.getByAltText(/testsub/i);
 
     expect(postTitle).toBeInTheDocument();

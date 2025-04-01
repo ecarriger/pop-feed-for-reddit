@@ -9,9 +9,9 @@ const PostPreviewList = () => {
     return (
         <>
             <h2>PostPreviewList</h2>
-            <ul>
+            <div>
                 {Object.keys(posts).map(key => <PostPreview key={key} postId={key} />)}
-            </ul>
+            </div>
         </>
     )
 }
