@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useDispatch } from "react-redux";
 import { addPost } from "../postsSlice";
-import { loadMockRedditData } from "../../../utilities/redditApi";
+import { loadRedditData, loadMockRedditData } from "../../../utilities/redditApi";
 import CategoryPicker from "../../../components/categoryPicker/CategoryPicker";
 import PostPreviewList from "../../../components/postPreviewList/PostPreviewList";
 
@@ -17,6 +17,11 @@ const HomePage = () => {
 
     const loadPosts = async (e) => {
         e.preventDefault();
+        const redditData = await loadRedditData();
+        setPosts(redditData);
+    }
+    const loadMockPosts = async (e) => {
+        e.preventDefault();
         const mockRedditData = await loadMockRedditData();
         setPosts(mockRedditData);
     }
@@ -25,7 +30,7 @@ const HomePage = () => {
         <>
             <h2>HomePage</h2>
             <CategoryPicker />
-            {posts.length ? <PostPreviewList /> : <button onClick={loadPosts} >Load Posts</button>}
+            {posts.length ? <PostPreviewList /> : <><button onClick={loadPosts} >Load Live Posts</button><button onClick={loadMockPosts} >Load Mock Posts</button></>}
         </>
     );
 }
