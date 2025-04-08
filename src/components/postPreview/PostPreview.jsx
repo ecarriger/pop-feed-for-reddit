@@ -34,7 +34,7 @@ const PostPreview = ({postId}) => {
                 alt={`r/${post.subreddit}`} />
             break;
         case 'hosted:video':
-            postBody = <PostVideo />;
+            postBody = <PostVideo videoUrl={post.secure_media.reddit_video.fallback_url} />;
             break;
     }
 

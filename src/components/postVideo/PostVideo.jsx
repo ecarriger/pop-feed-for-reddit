@@ -1,11 +1,23 @@
 import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
-const PostVideo = ({title}) => {
+const PostVideo = ({title, videoUrl}) => {
     return(
         <CardContent>
             <Typography>{title}</Typography>
-            <h3>PostVideo</h3>
+            <CardMedia 
+                component='video' 
+                type='video/mp4'  
+                image={videoUrl} 
+                height='540' 
+                controls 
+                controlsList='nodownload' 
+                disablePictureInPicture
+                muted='false' >
+                <source src={videoUrl} />
+                <Typography>Unable to load video</Typography>
+            </CardMedia>
         </CardContent>
     );
 };
