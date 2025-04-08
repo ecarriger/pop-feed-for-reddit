@@ -1,8 +1,12 @@
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 
-
-const PostVideo = () => {
+const PostVideo = ({title}) => {
     return(
-        <h3>PostVideo</h3>
+        <CardContent>
+            <Typography>{title}</Typography>
+            <h3>PostVideo</h3>
+        </CardContent>
     );
 };
 
