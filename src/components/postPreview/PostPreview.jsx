@@ -8,20 +8,22 @@ import CardHeader from "@mui/material/CardHeader";
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
+import Typography from "@mui/material/Typography";
 
 const PostPreview = ({postId}) => {
     
     const post = useSelector(selectPost(postId));
-    const timeStamp = Date.now() - post.created;
-    const postCreated = formatTimestamp(timeStamp);
+    const postCreated = formatTimestamp(Date.now() - post.created);
+    const mediaPresent = ('url_overridden_by_dest' in post);
 
     return (
         <Card>
-            <CardHeader title={`r/${post.subreddit}`} subheader={postCreated} />
+            <CardHeader subheader={`r/${post.subreddit} • ${postCreated}`} />
             <CardContent>
-                <h3>{post.title}</h3>
+                <Typography>{post.title}</Typography>
+                {!mediaPresent && <Typography>{post.selftext}</Typography>}
             </CardContent>
-            {('preview' in post) 
+            {mediaPresent 
             && 
             <Box sx={{
                 backgroundImage: `url(${post.url_overridden_by_dest})`, 
