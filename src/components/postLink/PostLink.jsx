@@ -1,4 +1,4 @@
-import CardContent from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 import Box from "@mui/material/Box";
 import CardMedia from '@mui/material/CardMedia';
 import Typography from "@mui/material/Typography";
