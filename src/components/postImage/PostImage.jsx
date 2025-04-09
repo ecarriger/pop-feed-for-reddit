@@ -1,12 +1,12 @@
+import PostTitle from '../postTitle/PostTitle';
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
 
 const PostImage = ({title, imageUrl, alt}) => {
     return (
         <CardContent>
-            <Typography variant='h3'>{title}</Typography>
+            <PostTitle title={title} />
             <Box sx={{
                 backgroundImage: `url(${imageUrl})`, 
                 backgroundSize: 'cover',

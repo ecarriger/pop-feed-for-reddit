@@ -1,3 +1,4 @@
+import PostTitle from '../postTitle/PostTitle';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
@@ -5,7 +6,7 @@ import Typography from '@mui/material/Typography';
 const PostVideo = ({title, videoUrl}) => {
     return(
         <CardContent>
-            <Typography variant='h3'>{title}</Typography>
+            <PostTitle title={title} />
             <CardMedia 
                 component='video' 
                 type='video/mp4'  
