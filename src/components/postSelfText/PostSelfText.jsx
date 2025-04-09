@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 const PostSelfText = ({title, selfText}) => {
     return (
         <CardContent>
-            <Typography>{title}</Typography>
+            <Typography variant='h3'>{title}</Typography>
             <Typography>{selfText}</Typography>
         </CardContent>
     )
