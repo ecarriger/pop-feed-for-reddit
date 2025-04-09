@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 const PostImage = ({title, imageUrl, alt}) => {
     return (
         <CardContent>
-            <Typography>{title}</Typography>
+            <Typography variant='h3'>{title}</Typography>
             <Box sx={{
                 backgroundImage: `url(${imageUrl})`, 
                 backgroundSize: 'cover',
