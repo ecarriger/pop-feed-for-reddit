@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 const PostVideo = ({title, videoUrl}) => {
     return(
         <CardContent>
-            <Typography>{title}</Typography>
+            <Typography variant='h3'>{title}</Typography>
             <CardMedia 
                 component='video' 
                 type='video/mp4'  
