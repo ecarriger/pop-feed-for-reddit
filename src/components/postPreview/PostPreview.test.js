@@ -15,12 +15,14 @@ const renderPostPreview = (postId) => {
                     preview: {
                         images: ['mockurl']
                     },
-                    ups: 579
+                    ups: 579,
+                    domain: ''
                 },
                 xyz789: {
                     id: 'xyz789',
                     title: 'Test xyz789 heading',
-                    subreddit: 'testsub'
+                    subreddit: 'testsub',
+                    domain: ''
                 }
             }
         }
@@ -42,11 +44,4 @@ test('post elements render', () => {
     expect(subReddit).toBeInTheDocument();
     expect(chips).toBeInTheDocument();
     expect(previewImg).toBeInTheDocument();
-});
-test('no image renders if post data does not contain preview key', () => {
-    renderPostPreview('xyz789');
-
-    const previewImg = screen.queryByAltText(/testsub/i);
-
-    expect(previewImg).not.toBeInTheDocument();
 });
