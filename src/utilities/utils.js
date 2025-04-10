@@ -41,6 +41,10 @@ export const formatTimestamp = (timestamp) => {
     }
 
 }
-export const convertImageIdToUrl = (id) => {
-    return `https://i.redd.it/${id}`;
-}
+export const convertMediaMetaDataToUrls = (data) => {
+    const urls = [];
+    for(const key in data) {
+        urls.push(`https://i.redd.it/${key}.${data[key].m.substring(6)}`);
+    }
+    return urls;
+};

@@ -1,4 +1,4 @@
-import { formatTimestamp, convertImageIdToUrl } from './utils.js';
+import { formatTimestamp, convertMediaMetaDataToUrls } from './utils.js';
 
 describe('formatTimestamp tests', () => {
     test('returns invalid time if timestamp is not a number', () => {
@@ -57,15 +57,20 @@ describe('formatTimestamp tests', () => {
         expect(formattedTimestamp).toBe('1 yr. ago');
     });
 });
-describe('convertImageIdToUrl tests', () => {
-    test('given abc123 returns https://i.redd.it/abc123', () => {
-        const url = convertImageIdToUrl('abc123');
+describe('convertMediaMetaDataToUrls tests', () => {
+    test('given abc123 and xyz789 returns https://i.redd.it/abc123.jpg and https://i.redd.it/xyz789.jpg', () => {
+        const data = {
+            "abc123": {
+              "m": "image/jpg"
+            },
+            "xyz789": {
+              "m": "image/jpg"
+            }
+        };
 
-        expect(url).toBe('https://i.redd.it/abc123');
-    });
-    test('given xyz789 returns https://i.redd.it/xyz789', () => {
-        const url = convertImageIdToUrl('xyz789');
+        const urls = convertMediaMetaDataToUrls(data);
 
-        expect(url).toBe('https://i.redd.it/xyz789');
+        expect(urls[0]).toBe('https://i.redd.it/abc123.jpg');
+        expect(urls[1]).toBe('https://i.redd.it/xyz789.jpg');
     });
 });
