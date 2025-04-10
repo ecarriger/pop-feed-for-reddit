@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import PostGallery from './PostGallery';
 
-const renderPostGallery = (title = 'test title', imageUrls = []) => {
-    render(<PostGallery title={title} images={imageUrls} />);
+const renderPostGallery = (title = 'test title', imageUrls = [], alt = 'test alt') => {
+    render(<PostGallery title={title} imageUrls={imageUrls} alt={alt} />);
 };
 
 test('title is visible', () => {
@@ -15,7 +15,7 @@ test('title is visible', () => {
    expect(title).toBeInTheDocument();
 });
 test('renders 2 images when passed 2 urls ', () => {
-    renderPostGallery(undefined, ['url1.com', 'url2.com']);
+    renderPostGallery(undefined, ['url1.com', 'url2.com'], undefined);
 
     const images = screen.getAllByRole('img');
 

@@ -6,24 +6,29 @@ import CardMedia from '@mui/material/CardMedia';
 const PostGallery = ({title, imageUrls, alt}) => {
     return (
         <CardContent>
-            <PostTitle>{title}</PostTitle>
-            <Box sx={{
-                backgroundImage: `url(${imageUrls[0]})`, 
-                backgroundSize: 'cover',
-                borderRadius: '32px'
-            }}>
-                <CardMedia 
-                    component='img' 
-                    image={imageUrls[0]} 
-                    height='540' 
-                    alt={alt} 
-                    sx={{
-                        objectFit: 'contain', 
-                        backdropFilter:'blur(32px)',
+            <PostTitle title={title} />
+            {imageUrls.map(url => {
+                return (
+                    <Box sx={{
+                        backgroundImage: `url(${url})`, 
+                        backgroundSize: 'cover',
                         borderRadius: '32px'
-                    }}
-                />
-            </Box>
+                    }}>
+                        <CardMedia 
+                            component='img' 
+                            image={url} 
+                            height='540' 
+                            alt={alt} 
+                            sx={{
+                                objectFit: 'contain', 
+                                backdropFilter:'blur(32px)',
+                                borderRadius: '32px'
+                            }}
+                        />
+                    </Box>
+                )
+            })}
+            
         </CardContent>
         
     )
