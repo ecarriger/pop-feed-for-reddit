@@ -41,3 +41,6 @@ export const formatTimestamp = (timestamp) => {
     }
 
 }
+export const convertImageIdToUrl = (id) => {
+    return `https://i.redd.it/${id}`;
+}
