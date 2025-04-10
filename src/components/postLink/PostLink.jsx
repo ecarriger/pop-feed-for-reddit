@@ -11,7 +11,7 @@ const PostLink = ({title, linkUrl, imgUrl, alt}) => {
                 <PostTitle title={title} />
                 <Link href={linkUrl}>{linkUrl}</Link>
             </Box>
-            <CardMedia image={imgUrl} component='img' alt={alt} sx={{height: 'auto', width: 'auto'}} />
+            {imgUrl !== 'default' && <CardMedia image={imgUrl} component='img' alt={alt} sx={{height: 'auto', width: 'auto'}} />}
         </CardContent> 
     );
 };
