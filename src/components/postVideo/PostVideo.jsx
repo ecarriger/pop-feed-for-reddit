@@ -15,7 +15,7 @@ const PostVideo = ({title, videoUrl}) => {
                 controls 
                 controlsList='nodownload' 
                 disablePictureInPicture
-                muted='false' >
+                muted={false} >
                 <source src={videoUrl} />
                 <Typography>Unable to load video</Typography>
             </CardMedia>
