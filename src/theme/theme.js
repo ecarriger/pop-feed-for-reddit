@@ -23,6 +23,13 @@ const theme = createTheme({
                     borderRadius: '12px'
                 }
             }
+        },
+        MuiCardContent: {
+            styleOverrides: {
+                root: {
+                    padding: '0'
+                }
+            }
         }
     }
 });

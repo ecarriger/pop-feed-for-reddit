@@ -45,10 +45,10 @@ const PostPreview = ({postId}) => {
     }
 
     return (
-        <Card>
-            <CardHeader subheader={`r/${post.subreddit} • ${postCreated}`} />
+        <Card sx={{display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem'}}>
+            <CardHeader subheader={`r/${post.subreddit} • ${postCreated}`} sx={{padding: '0'}} />
                 {postBody}
-            <CardActions>
+            <CardActions sx={{padding: '0'}}>
                 <CounterChips likeCount={post.ups} commentCount={post.num_comments} />
             </CardActions>
         </Card>
