@@ -9,8 +9,20 @@ const theme = createTheme({
         secondary: {
             main: '#68596D'
         },
+        background: {
+            paper: '#FFF7FC'
+        },
         error: {
             main: '#BA1A1A'
+        }
+    },
+    components: {
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    borderRadius: '12px'
+                }
+            }
         }
     }
 });
