@@ -9,7 +9,7 @@ const PostGallery = ({title, imageUrls, alt}) => {
             <PostTitle title={title} />
             {imageUrls.map(url => {
                 return (
-                    <Box sx={{
+                    <Box key={url} sx={{
                         backgroundImage: `url(${url})`, 
                         backgroundSize: 'cover',
                         borderRadius: '32px'
