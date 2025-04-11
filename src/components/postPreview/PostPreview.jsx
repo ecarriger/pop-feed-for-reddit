@@ -5,7 +5,7 @@ import PostVideo from "../postVideo/PostVideo";
 import PostLink from "../postLink/PostLink";
 import PostSelfText from "../postSelfText/PostSelfText";
 import CounterChips from "../counterChips/CounterChips";
-import { convertImageIdToUrl, convertMediaMetaDataToUrls, formatTimestamp } from "../../utilities/utils";
+import { convertMediaMetaDataToUrls, formatTimestamp } from "../../utilities/utils";
 import Card from '@mui/material/Card';
 import CardHeader from "@mui/material/CardHeader";
 import CardActions from '@mui/material/CardActions';
