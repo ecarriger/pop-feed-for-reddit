@@ -6,7 +6,7 @@ const PostSelfText = ({title, selfText}) => {
     return (
         <CardContent>
             <PostTitle title={title} />
-            <Typography>{selfText}</Typography>
+            <Typography sx={{maxHeight: '9rem', overflow: 'hidden', textOverflow: 'ellipsis', }}>{selfText}</Typography>
         </CardContent>
     )
 };
