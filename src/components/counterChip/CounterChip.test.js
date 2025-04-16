@@ -4,17 +4,6 @@ import CounterChip from './CounterChip';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import CommentIcon from '@mui/icons-material/Comment';
 
-jest.mock('../../utilities/utils', () => {
-    const originalModule = jest.requireActual('../../utilities/utils');
-
-    return {
-        __esModule: true,
-        ...originalModule,
-        addSeperatorToNumber: number => Math.abs(number) >= 1000 ? "(-)1,000+" : number
-
-    }
-});
-
 const renderCounterChip = (count, icon) => {
     render(<CounterChip count={count} icon={icon} />);
 }

@@ -3,13 +3,15 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import './index.css'
 import { Provider } from 'react-redux'
-import store from './store.js'
+import { setupStore } from './store.js'
 import App from './App.jsx'
 import PostPage from './features/posts/postPage/PostPage.jsx'
 import HomePage from './features/posts/homePage/HomePage.jsx'
 import { ThemeProvider } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
 import theme from './theme/theme.js'
+
+const store = setupStore({});
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
