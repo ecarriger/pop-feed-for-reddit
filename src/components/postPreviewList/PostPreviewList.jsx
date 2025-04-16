@@ -1,11 +1,7 @@
-import { useSelector } from 'react-redux';
-import { selectAllPosts } from '../../features/posts/postsSlice';
 import PostPreview from "../postPreview/PostPreview";
 import Container from '@mui/material/Container';
 
-const PostPreviewList = () => {
-
-    const posts = useSelector(selectAllPosts);
+const PostPreviewList = ({posts}) => {
 
     return (
         <>

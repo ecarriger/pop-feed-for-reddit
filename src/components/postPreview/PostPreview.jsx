@@ -10,6 +10,7 @@ import Card from '@mui/material/Card';
 import CardHeader from "@mui/material/CardHeader";
 import CardActions from '@mui/material/CardActions';
 import PostGallery from "../postGallery/PostGallery";
+import { Link } from "react-router";
 
 const PostPreview = ({postId}) => {
     
@@ -45,13 +46,16 @@ const PostPreview = ({postId}) => {
     }
 
     return (
-        <Card sx={{display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem'}}>
-            <CardHeader subheader={`r/${post.subreddit} • ${postCreated}`} sx={{padding: '0'}} />
+            <Card sx={{display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem'}}>
+                <Link to={`/post/${post.id}`} >
+                    <CardHeader subheader={`r/${post.subreddit} • ${postCreated}`} sx={{padding: '0'}} />
+                </Link>
                 {postBody}
-            <CardActions sx={{padding: '0'}}>
-                <CounterChips likeCount={post.ups} commentCount={post.num_comments} />
-            </CardActions>
-        </Card>
+                <CardActions sx={{padding: '0'}}>
+                    <CounterChips likeCount={post.ups} commentCount={post.num_comments} />
+                </CardActions>
+            </Card>
+        
     );
 };
 
