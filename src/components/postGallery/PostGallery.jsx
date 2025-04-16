@@ -3,7 +3,7 @@ import PostTitle from "../postTitle/PostTitle";
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import { IconButton, MobileStepper } from '@mui/material';
+import { IconButton, MobileStepper, Fade } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
 const PostGallery = ({title, imageUrls, alt}) => {
@@ -16,28 +16,30 @@ const PostGallery = ({title, imageUrls, alt}) => {
         setSelectedImageIndex(selectedImageIndex => selectedImageIndex + 1);
     };
 
-    const cardMediaElements = imageUrls.map(url => {
+    const cardMediaElements = imageUrls.map((url, index) => {
         return (
-            <Box sx={{
-                backgroundImage: `url(${url})`, 
-                backgroundSize: 'cover',
-                borderRadius: '32px',
-                flexBasis: '100%',
-                }}
-            >
-                <CardMedia 
-                    component='img' 
-                    image={url} 
-                    height='540' 
-                    alt={alt} 
-                    loading='lazy' 
-                    sx={{
-                        objectFit: 'contain', 
-                        backdropFilter:'blur(32px)',
-                        borderRadius: '32px'
+            <Fade key={index} direction='left' in={index === selectedImageIndex} >
+                <Box sx={{
+                    backgroundImage: `url(${url})`, 
+                    backgroundSize: 'cover',
+                    borderRadius: '32px',
+                    flexBasis: '100%',
                     }}
-                />
-            </Box>
+                >
+                    <CardMedia 
+                        component='img' 
+                        image={url} 
+                        height='540' 
+                        alt={alt} 
+                        loading='lazy' 
+                        sx={{
+                            objectFit: 'contain', 
+                            backdropFilter:'blur(32px)',
+                            borderRadius: '32px'
+                        }}
+                    />
+                </Box>
+            </Fade>
         );
     });
 
