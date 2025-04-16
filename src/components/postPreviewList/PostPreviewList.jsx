@@ -15,7 +15,7 @@ const PostPreviewList = () => {
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '1rem',
+                    gap: '2rem',
                     padding: '1rem'
                 }}
             >
