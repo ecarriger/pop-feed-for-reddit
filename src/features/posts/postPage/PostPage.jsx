@@ -10,7 +10,7 @@ const PostPage = () => {
     const { postId } = useParams();
     
     const handleBackClick = () => {
-        navigate('/');
+        navigate(-1);
     }
 
     return(

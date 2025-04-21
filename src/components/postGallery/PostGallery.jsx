@@ -9,10 +9,12 @@ import { ArrowBack, ArrowForward } from '@mui/icons-material';
 const PostGallery = ({title, imageUrls, alt}) => {
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-    const handleClickPrev = () => {
+    const handleClickPrev = (e) => {
+        e.stopPropagation();
         setSelectedImageIndex(selectedImageIndex => selectedImageIndex - 1);
     };
-    const handleClickNext = () => {
+    const handleClickNext = (e) => {
+        e.stopPropagation();
         setSelectedImageIndex(selectedImageIndex => selectedImageIndex + 1);
     };
 
