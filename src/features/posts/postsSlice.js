@@ -8,11 +8,14 @@ const postsSlice = createSlice({
     reducers: {
         addPost: (state, action) => {
             state.allPosts[action.payload.data.id] = action.payload.data;
+        },
+        deleteAllPosts: (state) => {
+            state.allPosts = {};
         }
     }
 });
 
 export const selectPost = (postId) => (state) => state.posts.allPosts[postId];
 export const selectAllPosts = (state) => state.posts.allPosts;
-export const { addPost } = postsSlice.actions;
+export const { addPost, deleteAllPosts } = postsSlice.actions;
 export default postsSlice.reducer;

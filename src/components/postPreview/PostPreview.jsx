@@ -51,7 +51,7 @@ const PostPreview = ({postId, isPreview = true}) => {
     }
 
     return (
-            <Card id={postId}>
+            <Card id={postId} >
                 <CardActionArea 
                     onClick={isPreview && handleCardClick} 
                     disableTouchRipple='true' 
