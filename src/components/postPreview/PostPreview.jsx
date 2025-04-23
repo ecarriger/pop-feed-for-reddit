@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { selectPost } from "../../features/posts/postsSlice";
 import PostImage from "../postImage/PostImage";
@@ -10,8 +11,8 @@ import Card from '@mui/material/Card';
 import CardHeader from "@mui/material/CardHeader";
 import CardActions from '@mui/material/CardActions';
 import PostGallery from "../postGallery/PostGallery";
-import CardActionArea from '@mui/material/CardActionArea'
-import { useNavigate } from "react-router";
+import CardActionArea from '@mui/material/CardActionArea';
+import './PostPreview.css';
 
 const PostPreview = ({postId, isPreview = true}) => {
     const navigate = useNavigate();
@@ -51,7 +52,7 @@ const PostPreview = ({postId, isPreview = true}) => {
     }
 
     return (
-            <Card id={postId} >
+            <Card id={postId} className='fade' >
                 <CardActionArea 
                     onClick={isPreview && handleCardClick} 
                     disableTouchRipple='true' 

@@ -1,6 +1,5 @@
 import PostPreview from "../postPreview/PostPreview";
 import Box from '@mui/material/Box';
-import './PostPreviewList.css';
 
 const PostPreviewList = ({posts}) => {
 
@@ -8,7 +7,6 @@ const PostPreviewList = ({posts}) => {
         <>
             <h2>PostPreviewList</h2>
             <Box 
-                className='fade'
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
