@@ -2,11 +2,11 @@ import { render, screen } from '@testing-library/react';
 
 import App from './App';
 
-test('First test', () => {
+test('renders title', () => {
     render(<App />);
     
     const title = screen.getByRole('heading', {
-        name: /react/i
+        name: /pop feed for reddit/i
     });
 
     expect(title).toBeInTheDocument();

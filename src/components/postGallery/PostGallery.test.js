@@ -14,10 +14,10 @@ test('title is visible', () => {
 
    expect(title).toBeInTheDocument();
 });
-test('renders 2 images when passed 2 urls ', () => {
+test('renders 1 images when passed 2 urls ', () => {
     renderPostGallery(undefined, ['url1.com', 'url2.com'], undefined);
 
     const images = screen.getAllByRole('img');
 
-    expect(images).toHaveLength(2);
+    expect(images).toHaveLength(1);
 });

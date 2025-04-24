@@ -1,4 +1,5 @@
-import { screen, render } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 import PostPreview from './PostPreview';
 import { renderWithProviders } from '../../utilities/testUtils';
 
@@ -27,7 +28,7 @@ const renderPostPreview = (postId) => {
             }
         }
     };
-    renderWithProviders(<PostPreview postId={postId} />, {preloadedState: preloadedState});
+    renderWithProviders(<MemoryRouter><PostPreview postId={postId} /></MemoryRouter>, {preloadedState: preloadedState});
 };
 
 test('post elements render', () => {
