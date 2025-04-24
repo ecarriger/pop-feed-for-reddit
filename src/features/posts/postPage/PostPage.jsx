@@ -18,7 +18,6 @@ const PostPage = () => {
             <IconButton onClick={handleBackClick}>
                 <ArrowBack>Back</ArrowBack>
             </IconButton>
-            <h2>PostPage</h2>
             <PostPreview postId={postId} />
         </>
     );

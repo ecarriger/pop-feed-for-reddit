@@ -34,7 +34,6 @@ const HomePage = () => {
 
     return(
         <>
-            <h2>HomePage</h2>
             <CategoryPicker />
             <Button onClick={loadPosts} >Load Live Posts</Button>
             <Button onClick={loadMockPosts} >Load Mock Posts</Button>
