@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { selectPost } from "../../features/posts/postsSlice";
 import PostImage from "../postImage/PostImage";
@@ -10,9 +11,11 @@ import Card from '@mui/material/Card';
 import CardHeader from "@mui/material/CardHeader";
 import CardActions from '@mui/material/CardActions';
 import PostGallery from "../postGallery/PostGallery";
+import CardActionArea from '@mui/material/CardActionArea';
+import './PostPreview.css';
 
-const PostPreview = ({postId}) => {
-    
+const PostPreview = ({postId, isPreview = true}) => {
+    const navigate = useNavigate();
     const post = useSelector(selectPost(postId));
     const postCreated = formatTimestamp(Date.now() - post.created);
     let postBody;
@@ -44,14 +47,26 @@ const PostPreview = ({postId}) => {
             alt={`r/${post.subreddit}`} />
     }
 
+    const handleCardClick = () => {
+        navigate(`/post/${post.id}`);
+    }
+
     return (
-        <Card sx={{display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem'}}>
-            <CardHeader subheader={`r/${post.subreddit} • ${postCreated}`} sx={{padding: '0'}} />
+            <Card id={postId} className='fade' >
+                <CardActionArea 
+                    onClick={isPreview && handleCardClick} 
+                    disableTouchRipple='true' 
+                    component='div' 
+                    sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem', padding: '1rem'}}
+                >
+                <CardHeader subheader={`r/${post.subreddit} • ${postCreated}`} sx={{padding: '0'}} />
                 {postBody}
-            <CardActions sx={{padding: '0'}}>
-                <CounterChips likeCount={post.ups} commentCount={post.num_comments} />
-            </CardActions>
-        </Card>
+                <CardActions sx={{padding: '0'}}>
+                    <CounterChips likeCount={post.ups} commentCount={post.num_comments} />
+                </CardActions>
+                </CardActionArea>
+            </Card>
+        
     );
 };
 

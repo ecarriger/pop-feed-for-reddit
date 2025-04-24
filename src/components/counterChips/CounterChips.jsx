@@ -1,7 +1,7 @@
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import CommentIcon from '@mui/icons-material/Comment';
 import CounterChip from '../counterChip/CounterChip';
-import styles from './CounterChip.module.css';
+import styles from './CounterChips.module.css';
 
 
 const CounterChips = ({likeCount, commentCount}) => {

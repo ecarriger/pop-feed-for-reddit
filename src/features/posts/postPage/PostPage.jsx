@@ -1,13 +1,24 @@
-import Post from "../../../components/post/Post"
+import { useParams, useNavigate } from "react-router";
+import PostPreview from "../../../components/postPreview/PostPreview";
 import CommentsSection from "../../comments/Comments";
+import { IconButton } from "@mui/material";
+import { ArrowBack } from "@mui/icons-material";
 
 
 const PostPage = () => {
+    const navigate = useNavigate();
+    const { postId } = useParams();
+    
+    const handleBackClick = () => {
+        navigate(-1);
+    }
+
     return(
         <>
-            <h2>PostPage</h2>
-            <Post />
-            <Comments />
+            <IconButton onClick={handleBackClick}>
+                <ArrowBack>Back</ArrowBack>
+            </IconButton>
+            <PostPreview postId={postId} />
         </>
     );
 }

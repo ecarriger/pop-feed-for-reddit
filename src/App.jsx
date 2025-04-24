@@ -8,8 +8,6 @@ function App() {
   return (
     <>
       <Nav />
-      <h2>React App</h2>
-      <Button variant="contained">MUI</Button>
       <Outlet />
     </>
   )

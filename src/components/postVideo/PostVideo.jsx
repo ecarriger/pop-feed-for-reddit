@@ -11,11 +11,12 @@ const PostVideo = ({title, videoUrl}) => {
                 component='video' 
                 type='video/mp4'  
                 image={videoUrl} 
-                height='540' 
                 controls 
                 controlsList='nodownload' 
                 disablePictureInPicture
-                muted={false} >
+                muted={false} 
+                sx={{maxHeight: '540px'}}
+            >
                 <source src={videoUrl} />
                 <Typography>Unable to load video</Typography>
             </CardMedia>
